@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // Hence it could be called multiple times per second
   void onCountdownChange(v) {
     int vInt = int.parse(v);
-    if (!isAudioPlaying && vInt > 0 && vInt <= thresholdTime) {
+    if (!isAudioPlaying && vInt > 0 && vInt < thresholdTime) {
       // Do not call setUpdate here, we don't need to rerender UI here
       isAudioPlaying = true;
        player.seek(const Duration(milliseconds: 0));
