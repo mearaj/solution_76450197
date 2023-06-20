@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +31,7 @@ class SoloModeLogic {
     if (vInt > 0 && vInt < threshold.length + 1 && !threshold[vInt-1]) {
       audioPlayer.pause();
       threshold[vInt-1] = true;
-      //audioPlayer.seek(const Duration(milliseconds: 0));
+      audioPlayer.seek(const Duration(milliseconds: 0));
       audioPlayer.resume();
     } else if (vInt == 0) {
       audioPlayer.pause();
